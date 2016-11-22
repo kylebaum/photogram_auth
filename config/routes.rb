@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
+
+    root "photos#index"
+
+
+
   # Routes for the Comment resource:
   # CREATE
 
-  root "photos#index"
 
   get "/comments/new", :controller => "comments", :action => "new"
   post "/create_comment", :controller => "comments", :action => "create"
@@ -108,4 +113,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Routes for the users:
+    get "/users", :controller => "users", action: "index"
+    get "/users/:id", :controller => "users", :action => "show"
+
 end
