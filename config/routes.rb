@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
     root "photos#index"
 
 
@@ -117,5 +118,8 @@ Rails.application.routes.draw do
   # Routes for the users:
     get "/users", :controller => "users", action: "index"
     get "/users/:id", :controller => "users", :action => "show"
+
+    # Routes for the my_likes:
+    get "/my_likes", :controller => "my_likes", action: "index"
 
 end

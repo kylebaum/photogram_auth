@@ -54,7 +54,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if current_user != nil %>
-          <li><a href="/users/edit"><%= current_user.email %> Edit Profile Link</a></li>
+          <li><a href="/users/edit"><%= current_user.email %></a></li>
           <% else %>
           <li><a href="/users/sign_in"> You should sign in!</a></li>
           <% end %>
