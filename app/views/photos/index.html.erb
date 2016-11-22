@@ -60,9 +60,9 @@
                   <!-- Hidden input for authenticity token to protect from forgery -->
                   <input name="authenticity_token" type="hidden" value="hPnwcBY/+38uM8Lu1QVFfaBY+zyhspJNPFacldDEJhtpbNWyG+WmFoeYegEVg+ux6GoiELydFLoHRIsx/q1NHQ==">
 
-                  <input type="hidden" name="photo_id" value="67">
+                  <input type="hidden" name="photo_id" value="<%= photo.id %>">
 
-                  <input type="hidden" name="user_id" value="1">
+                  <input type="hidden" name="user_id" value="<%= photo.user_id %>">
 
                   <!-- Label and input for body -->
                   <div class="form-group">
@@ -71,6 +71,12 @@
                     </label>
 
                     <input type="text" id="body" name="body" placeholder="Add a comment..." class="form-control" required>
+
+                    <% photo.comments.each do |comment| %>
+                      <p><%= comment.user.username %></p>
+                      <%= comment.body %>
+                    <% end %>
+
                   </div>
                 </form>
               </div>
