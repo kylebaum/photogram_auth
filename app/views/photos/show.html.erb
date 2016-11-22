@@ -12,7 +12,7 @@
       <dd><%= @photo.image %></dd>
 
       <dt>User</dt>
-      <dd><%= @photo.user_id %></dd>
+      <dd><%= @photo.user.username %></dd>
 
     </dl>
 
@@ -20,12 +20,25 @@
       <a href="/photos" class="btn btn-primary">
         Back
       </a>
-      <a href="/photos/<%= @photo.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_photo/<%= @photo.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
+      <% if current_user.id == @photo.user_id  %>
+              <a href="/photos/<%= @photo.id %>/edit" class="btn btn-warning">Edit</a>
+              <a href="/delete_photo/<%= @photo.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+              <% end %>
+
       </a>
     </div>
   </div>
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+
+ <tr>
+
+   <td>
+
+
+   </td>
+ </tr>
+
+</table>
+
 </div>
