@@ -12,4 +12,10 @@ def show
   render("users/show.html.erb")
 end
 
+def my_likes
+  @users = current_user
+
+  render("users/my_likes.html.erb")
+end
+
 end
